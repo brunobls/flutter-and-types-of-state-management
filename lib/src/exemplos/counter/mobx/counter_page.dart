@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'counter.dart';
 
@@ -25,7 +26,12 @@ class _ContadorContadorMobx extends State<ContadorMobx> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
-            Observer(),
+            Observer(
+              builder: (_) => Text(
+                '${_controller.value}',
+                style: const TextStyle(fontSize: 20),
+              ),
+            ),
           ],
         ),
       ),
