@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_management/src/exemplos/counter/bloc/counter_page.dart';
 
 import 'change_notifier/counter_page.dart';
 import 'native_state/counter_page.dart';
@@ -64,6 +65,21 @@ class CounterMenuPage extends StatelessWidget {
                 );
               },
               child: const Text("Value Notifier"),
+              style: style,
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContadorPageBlocCubitState(
+                      title: 'Cubit',
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Cubit"),
               style: style,
             ),
           ],
