@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ContadorPageValueNotifierSimplified extends StatefulWidget {
-  const ContadorPageValueNotifierSimplified({Key? key, required this.title})
-      : super(key: key);
-
+class ContadorPageValueNotifierSimplified extends StatelessWidget {
   final String title;
-
-  @override
-  State<ContadorPageValueNotifierSimplified> createState() =>
-      _ContadorPageValueNotifierSimplifiedState();
-}
-
-class _ContadorPageValueNotifierSimplifiedState
-    extends State<ContadorPageValueNotifierSimplified> {
   final controller = Controller();
+
+  ContadorPageValueNotifierSimplified({Key? key, required this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: Column(
