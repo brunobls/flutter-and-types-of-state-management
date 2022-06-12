@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ContadorPageNativeState extends StatefulWidget {
-  const ContadorPageNativeState({Key? key, required this.title})
-      : super(key: key);
+class ContadorPageNative extends StatefulWidget {
+  const ContadorPageNative({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<ContadorPageNativeState> createState() => _ContadorPageNativeState();
+  State<ContadorPageNative> createState() => _ContadorPageNativeState();
 }
 
-class _ContadorPageNativeState extends State<ContadorPageNativeState> {
+class _ContadorPageNativeState extends State<ContadorPageNative> {
   int counter = 0;
 
   void increment() {
