@@ -1,9 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CounterCubit extends Cubit<int> {
-  CounterCubit() : super(0);
+abstract class CounterEvent {}
 
-  void increment() => emit(state + 1);
+class IncremetCounterEvent extends CounterEvent {}
 
-  void decrement() => emit(state - 1);
+class CounterBloc extends Bloc<CounterEvent, int> {
+  CounterBloc() : super(0) {
+    on<IncremetCounterEvent>((event, emit) => emit(state + 1));
+  }
 }

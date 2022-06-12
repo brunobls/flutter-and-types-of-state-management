@@ -3,32 +3,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'counter.dart';
 
-class ContadorPageBlocCubitState extends StatefulWidget {
-  const ContadorPageBlocCubitState({Key? key, required this.title})
-      : super(key: key);
+class ContadorPageBloc extends StatelessWidget {
+  ContadorPageBloc({Key? key, required this.title}) : super(key: key);
 
   final String title;
-
-  @override
-  State<ContadorPageBlocCubitState> createState() =>
-      _ContadorPageBlocCubitState();
-}
-
-class _ContadorPageBlocCubitState extends State<ContadorPageBlocCubitState> {
-  final CounterCubit _counterCubit = CounterCubit();
+  final CounterBloc _counterCubit = CounterBloc();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
-            BlocBuilder<CounterCubit, int>(
+            BlocBuilder<CounterBloc, int>(
               bloc: _counterCubit,
               builder: (context, count) {
                 return Text(
@@ -41,7 +33,9 @@ class _ContadorPageBlocCubitState extends State<ContadorPageBlocCubitState> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _counterCubit.increment,
+        onPressed: () {
+          _counterCubit.add(IncremetCounterEvent());
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
