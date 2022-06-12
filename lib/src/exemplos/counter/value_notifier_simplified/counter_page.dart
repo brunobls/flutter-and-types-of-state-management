@@ -23,7 +23,7 @@ class ContadorPageValueNotifierSimplified extends StatelessWidget {
               builder: (context, value, child) {
                 return Text(
                   "$value",
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headline6,
                 );
               },
             ),
