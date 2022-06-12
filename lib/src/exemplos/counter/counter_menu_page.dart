@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_management/src/exemplos/counter/bloc/counter_page.dart';
 
+import 'bloc/counter_page.dart';
 import 'change_notifier/counter_page.dart';
+import 'cubit/counter_page.dart';
 import 'native_state/counter_page.dart';
 import 'value_notifier_simplified/counter_page.dart';
 
@@ -27,7 +28,7 @@ class CounterMenuPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ContadorPageNativeState(
+                    builder: (context) => const ContadorPageNative(
                       title: 'Native State',
                     ),
                   ),
@@ -57,8 +58,7 @@ class CounterMenuPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        const ContadorPageValueNotifierSimplified(
+                    builder: (context) => ContadorPageValueNotifierSimplified(
                       title: 'Value Notifier',
                     ),
                   ),
@@ -73,13 +73,28 @@ class CounterMenuPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ContadorPageBlocCubitState(
+                    builder: (context) => ContadorPageCubit(
                       title: 'Cubit',
                     ),
                   ),
                 );
               },
               child: const Text("Cubit"),
+              style: style,
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ContadorPageBloc(
+                      title: 'Bloc',
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Bloc"),
               style: style,
             ),
           ],
