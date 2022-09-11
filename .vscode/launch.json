@@ -5,21 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_state_management",
-            "cwd": "flutter_state_management",
+            "name": "state_management",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "flutter_state_management (profile mode)",
-            "cwd": "flutter_state_management",
+            "name": "state_management (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "flutter_state_management (release mode)",
-            "cwd": "flutter_state_management",
+            "name": "state_management (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
