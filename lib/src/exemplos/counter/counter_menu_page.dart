@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_management/src/exemplos/counter/getx/counter_page.dart';
+import 'package:flutter_state_management/src/exemplos/counter/value_notifier_abstracted/counter_page.dart';
 
 import 'bloc/counter_page.dart';
 import 'change_notifier/counter_page.dart';
@@ -66,6 +67,21 @@ class CounterMenuPage extends StatelessWidget {
                 );
               },
               child: const Text("Value Notifier"),
+              style: style,
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ContadorPageValueNotifierAbstracted(
+                      title: 'Value Notifier Abstracted',
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Value Notifier Abstracted"),
               style: style,
             ),
             const SizedBox(height: 10),
